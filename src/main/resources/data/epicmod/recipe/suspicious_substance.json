@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:glowstone_dust",
+    "minecraft:redstone",
+    "minecraft:amethyst_shard"
+  ],
+  "result": {
+    "id": "epicmod:suspicious_substance",
+    "count": 2
+  }
+}
