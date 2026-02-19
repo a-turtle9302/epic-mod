@@ -9,7 +9,6 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.component.ItemAttributeModifiers;
 
 import java.util.function.Function;
 

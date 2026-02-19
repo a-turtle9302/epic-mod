@@ -2,7 +2,6 @@ package com.meiscoolx2.epicmod.block;
 
 import com.meiscoolx2.epicmod.EpicMod;
 import com.meiscoolx2.epicmod.block.custom.EpicBlock;
-import com.meiscoolx2.epicmod.item.ModItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
