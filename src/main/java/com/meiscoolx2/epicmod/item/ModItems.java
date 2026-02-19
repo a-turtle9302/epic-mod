@@ -14,7 +14,7 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 import java.util.function.Function;
 
 public class ModItems {
-    public static final Item SUSPICIOUS_SUBSTANCE = registerItem("suspicious_substance", Item::new, new Item.Properties());
+    public static final Item SUSPICIOUS_SUBSTANCE = registerItem("suspicious_substance", Item::new, new Item.Properties().food(ModFoodProperties.SUSPICIOUS_SUBSTANCE, ModFoodProperties.SUSPICIOUS_SUBSTANCE_EFFECT));
     public static final Item KNOCKBACK_STICK = registerItem("knockback_stick", Item::new, new Item.Properties());
 
 

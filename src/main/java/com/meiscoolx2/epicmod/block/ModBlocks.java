@@ -1,6 +1,7 @@
 package com.meiscoolx2.epicmod.block;
 
 import com.meiscoolx2.epicmod.EpicMod;
+import com.meiscoolx2.epicmod.block.custom.EpicBlock;
 import com.meiscoolx2.epicmod.item.ModItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.Registry;
@@ -21,7 +22,7 @@ public class ModBlocks {
 
     public static final Block EPIC_BLOCK = registerBlock(
             "epic_block",
-            Block::new,
+            EpicBlock::new,
             BlockBehaviour.Properties.of()
                     .strength(4f)
                     .requiresCorrectToolForDrops()
@@ -30,6 +31,7 @@ public class ModBlocks {
     );
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
+        // idk how this works ask the fabric docs
         ResourceKey<Block> blockKey = keyOfBlock(name);
         Block block = blockFactory.apply(settings.setId(blockKey));
 
