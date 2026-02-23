@@ -1,7 +1,9 @@
 package com.meiscoolx2.epicmod.block.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
@@ -16,7 +18,6 @@ public class EpicBlock extends Block {
     @Override
     public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
         if (!level.isClientSide()) {
-
             // schedule a tick 3 game ticks later
             level.scheduleTick(pos, this, 3);
         }
@@ -26,6 +27,12 @@ public class EpicBlock extends Block {
 
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        // send the delayed chat here
+        for (ServerPlayer player : level.getPlayers(p -> p.blockPosition().equals(pos.above()))) {
+            player.sendSystemMessage(Component.literal("ow no step me"));
+        }
+
+        // then destroy the block
         level.destroyBlock(pos, true); // true = drops
     }
 }

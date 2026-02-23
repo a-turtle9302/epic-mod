@@ -4,6 +4,7 @@ import com.meiscoolx2.epicmod.block.ModBlocks;
 import com.meiscoolx2.epicmod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,5 +17,10 @@ public class EpicMod implements ModInitializer {
 		LOGGER.info("who up epicing they mod");
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+
+		FuelRegistryEvents.BUILD.register((builder, context) -> {
+			builder.add(ModItems.SUSPICIOUS_SUBSTANCE, 600);
+		});
+
 	}
 }
