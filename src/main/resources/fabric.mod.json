@@ -1,38 +1,38 @@
 {
-	"schemaVersion": 1,
-	"id": "epicmod",
-	"version": "${version}",
-	"name": "epic mod",
-	"description": "who up epicing they mod",
-	"authors": [
-		"meiscoolx2"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/epicmod/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"com.meiscoolx2.epicmod.EpicMod"
-		],
-		"fabric-datagen": [
-			"com.meiscoolx2.epicmod.EpicModDataGenerator"
-		],
-		"client": [
-			"com.meiscoolx2.epicmod.EpicModClient"
-		]
-	},
-	"mixins": [
-		"epicmod.mixins.json"
-	],
-	"depends": {
-		"fabricloader": ">=0.18.4",
-		"minecraft": "~1.21.5",
-		"java": ">=21",
-		"fabric-api": "*",
-		"attributefix": "*"
-	}
+  "schemaVersion": 1,
+  "id": "epicmod",
+  "version": "${version}",
+  "name": "epic mod",
+  "description": "who up epicing they mod",
+  "authors": [
+    "meiscoolx2"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/epicmod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.meiscoolx2.epicmod.EpicMod"
+    ],
+    "fabric-datagen": [
+      "com.meiscoolx2.epicmod.EpicModDataGenerator"
+    ],
+    "client": [
+      "com.meiscoolx2.epicmod.EpicModClient"
+    ]
+  },
+  "mixins": [
+    "epicmod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "minecraft": "~1.21.5",
+    "java": ">=21",
+    "fabric-api": "*",
+    "attributefix": "*"
+  }
 }
