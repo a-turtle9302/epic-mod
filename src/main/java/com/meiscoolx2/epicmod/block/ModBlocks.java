@@ -12,8 +12,10 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 import java.util.function.Function;
 
@@ -26,6 +28,14 @@ public class ModBlocks {
                     .strength(4f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.STONE),
+            true
+    );
+
+    public static final Block GLASS_DOOR = registerBlock(
+            "glass_door",
+            props -> new DoorBlock(ModBlockSetTypes.GLASSISH, props),
+            BlockBehaviour.Properties.of()
+                    .noOcclusion(),
             true
     );
 
@@ -57,6 +67,7 @@ public class ModBlocks {
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
             itemGroup.accept(ModBlocks.EPIC_BLOCK);
+            itemGroup.accept(ModBlocks.GLASS_DOOR);
         });
     }
 }

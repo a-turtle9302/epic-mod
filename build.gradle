@@ -20,6 +20,10 @@ repositories {
 		name = 'ParchmentMC'
 		url = 'https://maven.parchmentmc.org'
 	}
+
+	maven {
+		url 'https://maven.blamejared.com'
+	}
 }
 
 fabricApi {
@@ -39,7 +43,9 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-	
+
+	// depends on this thingie
+	modImplementation(group: 'net.darkhax.attributefix', name: 'attributefix-fabric-1.21.11', version: '21.11.1')
 }
 
 processResources {

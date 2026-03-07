@@ -25,7 +25,7 @@ public class ModItems {
             .component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)
             .rarity(Rarity.RARE)
             .attributes(ItemAttributeModifiers.builder().add(Attributes.ATTACK_KNOCKBACK, new AttributeModifier(Identifier.fromNamespaceAndPath(EpicMod.MOD_ID, "stick_knockback"), 1000, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND).build()));
-
+    public static final Item TURTLE = registerItem("turtle", Item::new, new Item.Properties().sword(ModToolMaterials.TURTLE, 3, -2.4f));
 
     public static <GenericItem extends Item> GenericItem registerItem(String name, Function<Item.Properties, GenericItem> itemFactory, Item.Properties settings) {
         ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(EpicMod.MOD_ID, name));
@@ -43,6 +43,7 @@ public class ModItems {
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(itemGroup -> {
             itemGroup.accept(ModItems.KNOCKBACK_STICK);
+            itemGroup.accept(ModItems.TURTLE);
         });
     }
 }
