@@ -9,5 +9,6 @@ public class EpicModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.putBlock(ModBlocks.GLASS_DOOR, ChunkSectionLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.BOUNCEULATOR, ChunkSectionLayer.TRANSLUCENT);
     }
 }

@@ -1,6 +1,7 @@
 package com.meiscoolx2.epicmod.block;
 
 import com.meiscoolx2.epicmod.EpicMod;
+import com.meiscoolx2.epicmod.block.custom.BounceulatorBlock;
 import com.meiscoolx2.epicmod.block.custom.EpicBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.Registry;
@@ -13,6 +14,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.SlimeBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -34,6 +36,14 @@ public class ModBlocks {
     public static final Block GLASS_DOOR = registerBlock(
             "glass_door",
             props -> new DoorBlock(ModBlockSetTypes.GLASSISH, props),
+            BlockBehaviour.Properties.of()
+                    .noOcclusion(),
+            true
+    );
+
+    public static final Block BOUNCEULATOR = registerBlock(
+            "bounceulator",
+            BounceulatorBlock::new,
             BlockBehaviour.Properties.of()
                     .noOcclusion(),
             true

@@ -1,7 +1,6 @@
 package com.meiscoolx2.epicmod;
 
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import com.meiscoolx2.epicmod.block.ModBlocks;
 import com.meiscoolx2.epicmod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -10,7 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 
 import static net.fabricmc.fabric.impl.resource.pack.ModPackResourcesUtil.GSON;
@@ -29,7 +27,6 @@ public class EpicMod implements ModInitializer {
             builder.add(ModItems.SUSPICIOUS_SUBSTANCE, 600);
         });
 
-        // HEY STACKOVERFLOW HOW DO I MAKE A JSON FILE
         try {
             File configFile = new File("config/attributefix/minecraft/attack_knockback.json");
 
