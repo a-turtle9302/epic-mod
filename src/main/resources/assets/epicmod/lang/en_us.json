@@ -1,14 +1,15 @@
 {
-  "itemTooltip.epicmod.suspicious_substance": "kinda sus ngl",
-  "itemGroup.epicmod": "epic mod",
+  "block.epicmod.bounceulator": "Bounceulator",
   "block.epicmod.epic_block": "epic block",
-  "block.epicmod.splungy_ore": "Splungy Ore",
   "block.epicmod.glass_door": "Glass Door",
-  "item.epicmod.suspicious_substance": "Suspicious Substance",
+  "block.epicmod.splungy_ore": "Splungy Ore",
+  "item.epicmod.crispy_fries": "Crispy Fries",
   "item.epicmod.knockback_stick": "Knockback stick",
   "item.epicmod.raw_splungy": "Raw Splungy",
   "item.epicmod.splungy_ingot": "Splungy Ingot",
-  "item.epicmod.crispy_fries": "Crispy Fries",
+  "item.epicmod.suspicious_substance": "Suspicious Substance",
+  "itemGroup.epicmod": "epic mod",
   "itemTooltip.epicmod.crispy_fries": "Are these the world's crispiest fries? Let's find out.",
+  "itemTooltip.epicmod.suspicious_substance": "kinda sus ngl",
   "sound.epicmod.crispy_fries": "Are these the world's crispiest fries? Let's find out."
 }

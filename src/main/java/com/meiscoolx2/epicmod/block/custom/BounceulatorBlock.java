@@ -4,6 +4,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.SlimeBlock;
 import net.minecraft.world.phys.Vec3;
+import org.jspecify.annotations.NonNull;
 
 public class BounceulatorBlock extends SlimeBlock {
     public BounceulatorBlock(Properties properties) {
@@ -11,7 +12,7 @@ public class BounceulatorBlock extends SlimeBlock {
     }
 
     @Override
-    public void updateEntityMovementAfterFallOn(BlockGetter level, Entity entity) {
+    public void updateEntityMovementAfterFallOn(@NonNull BlockGetter level, Entity entity) {
         if (entity.isSuppressingBounce()) {
             super.updateEntityMovementAfterFallOn(level, entity);
         } else {
