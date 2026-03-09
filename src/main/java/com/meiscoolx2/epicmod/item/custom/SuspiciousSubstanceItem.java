@@ -16,11 +16,7 @@ public class SuspiciousSubstanceItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay tooltipDisplay, Consumer<Component> tooltipAdder, TooltipFlag flag) {
-        tooltipAdder.accept(
-                Component.literal("kinda ").withStyle(ChatFormatting.DARK_PURPLE)
-                        .append(Component.literal("sus ").withStyle(ChatFormatting.LIGHT_PURPLE))
-                        .append(Component.literal("ngl").withStyle(ChatFormatting.DARK_PURPLE))
-        );
+        tooltipAdder.accept(Component.translatable("item.epicmod.suspicious_substance.tooltip").withStyle(ChatFormatting.DARK_PURPLE));
         super.appendHoverText(stack, context, tooltipDisplay, tooltipAdder, flag);
     }
 }

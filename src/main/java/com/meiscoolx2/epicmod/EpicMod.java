@@ -3,6 +3,7 @@ package com.meiscoolx2.epicmod;
 import com.google.gson.JsonObject;
 import com.meiscoolx2.epicmod.block.ModBlocks;
 import com.meiscoolx2.epicmod.item.ModItems;
+import com.meiscoolx2.epicmod.sound.ModSounds;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import org.slf4j.Logger;
@@ -22,6 +23,7 @@ public class EpicMod implements ModInitializer {
         LOGGER.info("who up epicing they mod");
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
+        ModSounds.registerModSounds();
 
         FuelRegistryEvents.BUILD.register((builder, context) -> {
             builder.add(ModItems.SUSPICIOUS_SUBSTANCE, 600);

@@ -4,12 +4,12 @@
   "block.epicmod.glass_door": "Glass Door",
   "block.epicmod.splungy_ore": "Splungy Ore",
   "item.epicmod.crispy_fries": "Crispy Fries",
+  "item.epicmod.crispy_fries.tooltip": "Are these the world's most crispy fries? Lets find out.",
   "item.epicmod.knockback_stick": "Knockback stick",
   "item.epicmod.raw_splungy": "Raw Splungy",
   "item.epicmod.splungy_ingot": "Splungy Ingot",
   "item.epicmod.suspicious_substance": "Suspicious Substance",
+  "item.epicmod.suspicious_substance.tooltip": "kinda sus ngl",
   "itemGroup.epicmod": "epic mod",
-  "itemTooltip.epicmod.crispy_fries": "Are these the world's crispiest fries? Let's find out.",
-  "itemTooltip.epicmod.suspicious_substance": "kinda sus ngl",
-  "sound.epicmod.crispy_fries": "Are these the world's crispiest fries? Let's find out."
+  "sound.epicmod.crispy_fries": "Are these the world's most crispy fries? Let's find out."
 }

@@ -77,5 +77,9 @@ public class ModBlocks {
             itemGroup.accept(ModBlocks.EPIC_BLOCK);
             itemGroup.accept(ModBlocks.GLASS_DOOR);
         });
+
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS).register((itemGroup) -> {
+            itemGroup.accept(ModBlocks.BOUNCEULATOR);
+        });
     }
 }

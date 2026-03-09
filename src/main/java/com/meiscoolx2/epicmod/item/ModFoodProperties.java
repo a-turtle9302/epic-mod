@@ -13,6 +13,11 @@ public class ModFoodProperties {
             .saturationModifier(0.25f)
             .build();
 
+    public static final FoodProperties CRISPY_FRIES = new FoodProperties.Builder()
+            .nutrition(8)
+            .saturationModifier(0.8f)
+            .build();
+
     public static final Consumable SUSPICIOUS_SUBSTANCE_EFFECT = Consumables.defaultFood()
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.GLOWING, 2400), 0.75f)).build();
 }

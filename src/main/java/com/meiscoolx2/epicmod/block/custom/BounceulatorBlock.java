@@ -19,7 +19,7 @@ public class BounceulatorBlock extends SlimeBlock {
             Vec3 vec3 = entity.getDeltaMovement();
 
             if (vec3.y < 0.0) {
-                double multiplier = 1.20; // change this
+                double multiplier = 1.21; // hello everybody my name is welcome
                 entity.setDeltaMovement(vec3.x, -vec3.y * multiplier, vec3.z);
             }
         }

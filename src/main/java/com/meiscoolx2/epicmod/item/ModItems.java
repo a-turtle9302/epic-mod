@@ -1,6 +1,7 @@
 package com.meiscoolx2.epicmod.item;
 
 import com.meiscoolx2.epicmod.EpicMod;
+import com.meiscoolx2.epicmod.item.custom.CrispyFriesItem;
 import com.meiscoolx2.epicmod.item.custom.SuspiciousSubstanceItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.Registry;
@@ -26,6 +27,7 @@ public class ModItems {
             .rarity(Rarity.RARE)
             .attributes(ItemAttributeModifiers.builder().add(Attributes.ATTACK_KNOCKBACK, new AttributeModifier(Identifier.fromNamespaceAndPath(EpicMod.MOD_ID, "stick_knockback"), 1000, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND).build()));
     public static final Item TURTLE = registerItem("turtle", Item::new, new Item.Properties().sword(ModToolMaterials.TURTLE, 3, -2.4f));
+    public static final Item CRISPY_FRIES = registerItem("crispy_fries", CrispyFriesItem::new, new Item.Properties().food(ModFoodProperties.CRISPY_FRIES));
 
     public static <GenericItem extends Item> GenericItem registerItem(String name, Function<Item.Properties, GenericItem> itemFactory, Item.Properties settings) {
         ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(EpicMod.MOD_ID, name));
@@ -44,6 +46,10 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(itemGroup -> {
             itemGroup.accept(ModItems.KNOCKBACK_STICK);
             itemGroup.accept(ModItems.TURTLE);
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(itemGroup -> {
+            itemGroup.accept(ModItems.CRISPY_FRIES);
         });
     }
 }
