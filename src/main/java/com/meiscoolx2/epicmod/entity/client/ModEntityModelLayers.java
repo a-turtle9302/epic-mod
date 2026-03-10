@@ -1,7 +1,6 @@
 package com.meiscoolx2.epicmod.entity.client;
 
 import com.meiscoolx2.epicmod.EpicMod;
-import com.meiscoolx2.epicmod.entity.custom.GrimmyEntity;
 import com.meiscoolx2.epicmod.entity.model.GrimmyEntityModel;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.minecraft.client.model.geom.ModelLayerLocation;

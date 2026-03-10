@@ -6,6 +6,7 @@ import com.meiscoolx2.epicmod.entity.model.GrimmyEntityModel;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.Identifier;
+import org.jspecify.annotations.NonNull;
 
 public class GrimmyEntityRenderer extends MobRenderer<GrimmyEntity, GrimmyEntityRenderState, GrimmyEntityModel> {
     private static final Identifier TEXTURE = Identifier.fromNamespaceAndPath(EpicMod.MOD_ID, "textures/entity/grimmy.png");
@@ -20,7 +21,7 @@ public class GrimmyEntityRenderer extends MobRenderer<GrimmyEntity, GrimmyEntity
     }
 
     @Override
-    public Identifier getTextureLocation(GrimmyEntityRenderState state) {
+    public @NonNull Identifier getTextureLocation(GrimmyEntityRenderState state) {
         return TEXTURE;
     }
 }
