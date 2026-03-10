@@ -20,7 +20,7 @@ public class ModSounds {
     }
 
     public static void registerModSounds() {
-        EpicMod.LOGGER.info("Registering Mod Sounds for" + EpicMod.MOD_ID);
+        EpicMod.LOGGER.info("Registering Mod Sounds for " + EpicMod.MOD_ID);
         // Technically this method can stay empty, but some developers like to notify
         // the console, that certain parts of the mod have been successfully initialized
     }

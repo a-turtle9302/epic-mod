@@ -43,7 +43,8 @@ public class ModBlocks {
             "bounceulator",
             BounceulatorBlock::new,
             BlockBehaviour.Properties.of()
-                    .noOcclusion(),
+                    .noOcclusion()
+                    .sound(SoundType.SLIME_BLOCK),
             true
     );
 

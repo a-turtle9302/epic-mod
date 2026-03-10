@@ -19,7 +19,7 @@ public class CrispyFriesItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay tooltipDisplay, Consumer<Component> tooltipAdder, TooltipFlag flag) {
+    public void appendHoverText(@NonNull ItemStack stack, @NonNull TooltipContext context, @NonNull TooltipDisplay tooltipDisplay, Consumer<Component> tooltipAdder, @NonNull TooltipFlag flag) {
         tooltipAdder.accept(Component.translatable("item.epicmod.crispy_fries.tooltip").withStyle(ChatFormatting.GOLD));
         super.appendHoverText(stack, context, tooltipDisplay, tooltipAdder, flag);
     }

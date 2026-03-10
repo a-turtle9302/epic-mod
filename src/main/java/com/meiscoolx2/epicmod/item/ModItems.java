@@ -1,6 +1,7 @@
 package com.meiscoolx2.epicmod.item;
 
 import com.meiscoolx2.epicmod.EpicMod;
+import com.meiscoolx2.epicmod.entity.ModEntityTypes;
 import com.meiscoolx2.epicmod.item.custom.CrispyFriesItem;
 import com.meiscoolx2.epicmod.item.custom.SuspiciousSubstanceItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -16,6 +17,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 
 import java.util.function.Function;
@@ -28,6 +30,11 @@ public class ModItems {
             .attributes(ItemAttributeModifiers.builder().add(Attributes.ATTACK_KNOCKBACK, new AttributeModifier(Identifier.fromNamespaceAndPath(EpicMod.MOD_ID, "stick_knockback"), 1000, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND).build()));
     public static final Item TURTLE = registerItem("turtle", Item::new, new Item.Properties().sword(ModToolMaterials.TURTLE, 3, -2.4f));
     public static final Item CRISPY_FRIES = registerItem("crispy_fries", CrispyFriesItem::new, new Item.Properties().food(ModFoodProperties.CRISPY_FRIES));
+    public static final Item GRIMMY_SPAWN_EGG = registerItem(
+		"grimmy_spawn_egg",
+				SpawnEggItem::new,
+		new Item.Properties().spawnEgg(ModEntityTypes.GRIMMY)
+);
 
     public static <GenericItem extends Item> GenericItem registerItem(String name, Function<Item.Properties, GenericItem> itemFactory, Item.Properties settings) {
         ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(EpicMod.MOD_ID, name));
@@ -50,6 +57,10 @@ public class ModItems {
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(itemGroup -> {
             itemGroup.accept(ModItems.CRISPY_FRIES);
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS).register(itemGroup -> {
+            itemGroup.accept(ModItems.GRIMMY_SPAWN_EGG);
         });
     }
 }

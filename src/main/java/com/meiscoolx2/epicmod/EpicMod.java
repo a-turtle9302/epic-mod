@@ -2,6 +2,7 @@ package com.meiscoolx2.epicmod;
 
 import com.google.gson.JsonObject;
 import com.meiscoolx2.epicmod.block.ModBlocks;
+import com.meiscoolx2.epicmod.entity.ModEntityTypes;
 import com.meiscoolx2.epicmod.item.ModItems;
 import com.meiscoolx2.epicmod.sound.ModSounds;
 import net.fabricmc.api.ModInitializer;
@@ -24,6 +25,8 @@ public class EpicMod implements ModInitializer {
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
         ModSounds.registerModSounds();
+        ModEntityTypes.registerModEntityTypes();
+        ModEntityTypes.registerAttributes();
 
         FuelRegistryEvents.BUILD.register((builder, context) -> {
             builder.add(ModItems.SUSPICIOUS_SUBSTANCE, 600);
