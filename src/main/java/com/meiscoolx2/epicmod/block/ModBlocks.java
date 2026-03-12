@@ -57,12 +57,12 @@ public class ModBlocks {
             true
     );
 
-    /*public static final Block BLUE_TRAPDOOR = registerBlock(
+    public static final Block BLUE_TRAPDOOR = registerBlock(
             "blue_trapdoor",
             props -> new TrapDoorBlock(BlockSetType.OAK, props),
             BlockBehaviour.Properties.of(),
             true
-            );*/
+            );
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
         // idk how this works ask the fabric docs
