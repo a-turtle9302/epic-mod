@@ -3,6 +3,7 @@ package com.meiscoolx2.epicmod.block;
 import com.meiscoolx2.epicmod.EpicMod;
 import com.meiscoolx2.epicmod.block.custom.BounceulatorBlock;
 import com.meiscoolx2.epicmod.block.custom.EpicBlock;
+import com.meiscoolx2.epicmod.block.custom.QuarterBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -12,10 +13,9 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DoorBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 import java.util.function.Function;
 
@@ -48,6 +48,22 @@ public class ModBlocks {
             true
     );
 
+    public static final Block SPRUCE_QUARTER_BLOCK = registerBlock(
+            "spruce_quarter_block",
+            props -> new QuarterBlock(Blocks.SPRUCE_PLANKS.defaultBlockState(), props),
+            BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .sound(SoundType.WOOD),
+            true
+    );
+
+    /*public static final Block BLUE_TRAPDOOR = registerBlock(
+            "blue_trapdoor",
+            props -> new TrapDoorBlock(BlockSetType.OAK, props),
+            BlockBehaviour.Properties.of(),
+            true
+            );*/
+
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
         // idk how this works ask the fabric docs
         ResourceKey<Block> blockKey = keyOfBlock(name);
@@ -77,6 +93,7 @@ public class ModBlocks {
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
             itemGroup.accept(ModBlocks.EPIC_BLOCK);
             itemGroup.accept(ModBlocks.GLASS_DOOR);
+            itemGroup.accept(ModBlocks.SPRUCE_QUARTER_BLOCK);
         });
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS).register((itemGroup) -> {
