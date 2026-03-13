@@ -62,7 +62,7 @@ public class ModBlocks {
             props -> new TrapDoorBlock(BlockSetType.OAK, props),
             BlockBehaviour.Properties.of(),
             true
-            );
+    );
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
         // idk how this works ask the fabric docs
@@ -94,6 +94,7 @@ public class ModBlocks {
             itemGroup.accept(ModBlocks.EPIC_BLOCK);
             itemGroup.accept(ModBlocks.GLASS_DOOR);
             itemGroup.accept(ModBlocks.SPRUCE_QUARTER_BLOCK);
+            itemGroup.accept(ModBlocks.BLUE_TRAPDOOR);
         });
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS).register((itemGroup) -> {
