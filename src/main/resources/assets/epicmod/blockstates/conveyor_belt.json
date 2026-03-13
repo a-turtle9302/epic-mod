@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "epicmod:block/conveyor_belt" },
+    "facing=south": { "model": "epicmod:block/conveyor_belt", "y": 180 },
+    "facing=west":  { "model": "epicmod:block/conveyor_belt", "y": 270 },
+    "facing=east":  { "model": "epicmod:block/conveyor_belt", "y": 90 }
+  }
+}

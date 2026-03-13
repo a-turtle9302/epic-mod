@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_top",
+  "textures": {
+    "top": "epicmod:block/conveyor_belt_top",
+    "side": "minecraft:block/black_concrete",
+    "bottom": "minecraft:block/black_concrete"
+  }
+}

@@ -1,5 +1,13 @@
 {
   "asset_id": "epicmod:bliss",
-  "width": 2,
-  "height": 2
+  "author": {
+    "text": "meiscoolx2",
+    "color": "gray"
+  },
+  "title": {
+    "text": "Bliss",
+    "color": "yellow"
+  },
+  "width": 1,
+  "height": 1
 }
