@@ -18,12 +18,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class GrimmyEntity extends PathfinderMob {
-    public GrimmyEntity(Level world) {
-        this(ModEntityTypes.GRIMMY, world);
+public class GoldWalkerEntity extends PathfinderMob {
+    public GoldWalkerEntity(Level world) {
+        this(ModEntityTypes.GOLDWALKER, world);
     }
 
-    public GrimmyEntity(EntityType<? extends GrimmyEntity> entityType, Level world) {
+    public GoldWalkerEntity(EntityType<? extends GoldWalkerEntity> entityType, Level world) {
         super(entityType, world);
     }
 
@@ -40,5 +40,21 @@ public class GrimmyEntity extends PathfinderMob {
         this.goalSelector.addGoal(1, new RandomStrollGoal(this, 1));
         this.goalSelector.addGoal(2, new LookAtPlayerGoal(this, Player.class, 4));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
+    }
+
+    @Override
+    public void aiStep() {
+        super.aiStep();
+
+        if (!this.level().isClientSide()) {
+            if (this.getDeltaMovement().horizontalDistanceSqr() > 0.001) {
+                BlockPos pos = this.blockPosition().below();
+                BlockState state = this.level().getBlockState(pos);
+
+                if (state.isAir()) return;
+
+                this.level().setBlockAndUpdate(pos, Blocks.GOLD_BLOCK.defaultBlockState());
+            }
+        }
     }
 }

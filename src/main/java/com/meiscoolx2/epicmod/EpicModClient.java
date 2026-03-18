@@ -1,6 +1,7 @@
 package com.meiscoolx2.epicmod;
 
 import com.meiscoolx2.epicmod.block.ModBlocks;
+import com.meiscoolx2.epicmod.entity.client.GoldWalkerEntityRenderer;
 import com.meiscoolx2.epicmod.entity.client.GrimmyEntityRenderer;
 import com.meiscoolx2.epicmod.entity.client.ModEntityModelLayers;
 import com.meiscoolx2.epicmod.entity.ModEntityTypes;
@@ -12,9 +13,13 @@ import net.minecraft.client.renderer.entity.EntityRenderers;
 public class EpicModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
+        // block stuff
         BlockRenderLayerMap.putBlock(ModBlocks.GLASS_DOOR, ChunkSectionLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(ModBlocks.BOUNCEULATOR, ChunkSectionLayer.TRANSLUCENT);
+
+        // entity stuff
         ModEntityModelLayers.registerModelLayers();
         EntityRenderers.register(ModEntityTypes.GRIMMY, GrimmyEntityRenderer::new);
+        EntityRenderers.register(ModEntityTypes.GOLDWALKER, GoldWalkerEntityRenderer::new);
     }
 }

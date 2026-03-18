@@ -1,6 +1,7 @@
 package com.meiscoolx2.epicmod.entity;
 
 import com.meiscoolx2.epicmod.EpicMod;
+import com.meiscoolx2.epicmod.entity.custom.GoldWalkerEntity;
 import com.meiscoolx2.epicmod.entity.custom.GrimmyEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.core.Registry;
@@ -18,6 +19,11 @@ public class ModEntityTypes {
             EntityType.Builder.<GrimmyEntity>of(GrimmyEntity::new, MobCategory.MISC)
                     .sized(0.5f, 1f)
     );
+    public static final EntityType<GoldWalkerEntity> GOLDWALKER = register(
+            "goldwalker",
+            EntityType.Builder.<GoldWalkerEntity>of(GoldWalkerEntity::new, MobCategory.MISC)
+                    .sized(0.5f, 1f)
+    );
 
     private static <T extends Entity> EntityType<T> register(String name, EntityType.Builder<T> builder) {
         ResourceKey<EntityType<?>> key = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(EpicMod.MOD_ID, name));
@@ -30,5 +36,6 @@ public class ModEntityTypes {
 
     public static void registerAttributes() {
         FabricDefaultAttributeRegistry.register(GRIMMY, GrimmyEntity.createCubeAttributes());
+        FabricDefaultAttributeRegistry.register(GOLDWALKER, GoldWalkerEntity.createCubeAttributes());
     }
 }
