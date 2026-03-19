@@ -11,5 +11,6 @@
   "item.epicmod.suspicious_substance": "Suspicious Substance",
   "item.epicmod.suspicious_substance.tooltip": "kinda sus ngl",
   "itemGroup.epicmod": "epic mod",
-  "sound.epicmod.crispy_fries": "Are these the world's most crispy fries? Let's find out."
+  "sound.epicmod.crispy_fries": "Are these the world's most crispy fries? Let's find out.",
+  "tag.item.epicmod.turtle_repair": "Repairs Turtle"
 }

@@ -4,6 +4,7 @@ import com.meiscoolx2.epicmod.sound.ModSounds;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -26,15 +27,14 @@ public class CrispyFriesItem extends Item {
 
     @Override
     public @NonNull ItemStack finishUsingItem(@NonNull ItemStack stack, @NonNull Level level, @NonNull LivingEntity livingEntity) {
-        // Play sound for all nearby players (including the eater)
         if (!level.isClientSide()) {
             level.playSound(
-                    null, // null = all players nearby hear it
-                    livingEntity.blockPosition(), // where the sound originates
-                    ModSounds.CRISPY_FRIES,      // your custom sound
-                    livingEntity.getSoundSource(), // usually SoundSource.PLAYERS
-                    2f, // volume
-                    1f // pitch
+                    null,
+                    livingEntity.blockPosition(),
+                    ModSounds.CRISPY_FRIES,
+                    livingEntity.getSoundSource(),
+                    2f,
+                    1f
             );
         }
         return super.finishUsingItem(stack, level, livingEntity);
