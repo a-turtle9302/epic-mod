@@ -7,7 +7,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 
 public class ModTags {
-    public static class Items {
+    public static class ItemTags {
         public static final TagKey<Item> TURTLE_REPAIR = createTag("turtle_repair");
 
         private static TagKey<Item> createTag(String name) {
