@@ -21,7 +21,7 @@ public class GoldWalkerEntityRenderer extends MobRenderer<GoldWalkerEntity, Gold
     }
 
     @Override
-    public @NonNull Identifier getTextureLocation(GoldWalkerEntityRenderState state) {
+    public  Identifier getTextureLocation(GoldWalkerEntityRenderState state) {
         return TEXTURE;
     }
 }

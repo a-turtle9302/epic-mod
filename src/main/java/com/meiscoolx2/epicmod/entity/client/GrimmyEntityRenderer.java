@@ -21,7 +21,7 @@ public class GrimmyEntityRenderer extends MobRenderer<GrimmyEntity, GrimmyEntity
     }
 
     @Override
-    public @NonNull Identifier getTextureLocation(GrimmyEntityRenderState state) {
+    public  Identifier getTextureLocation(GrimmyEntityRenderState state) {
         return TEXTURE;
     }
 }

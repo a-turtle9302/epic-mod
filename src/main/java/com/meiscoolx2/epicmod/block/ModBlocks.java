@@ -1,10 +1,7 @@
 package com.meiscoolx2.epicmod.block;
 
 import com.meiscoolx2.epicmod.EpicMod;
-import com.meiscoolx2.epicmod.block.custom.BounceulatorBlock;
-import com.meiscoolx2.epicmod.block.custom.ConveyorBeltBlock;
-import com.meiscoolx2.epicmod.block.custom.EpicBlock;
-import com.meiscoolx2.epicmod.block.custom.QuarterBlock;
+import com.meiscoolx2.epicmod.block.custom.*;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;

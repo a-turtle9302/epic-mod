@@ -12,7 +12,7 @@ public class BounceulatorBlock extends SlimeBlock {
     }
 
     @Override
-    public void updateEntityMovementAfterFallOn(@NonNull BlockGetter level, Entity entity) {
+    public void updateEntityMovementAfterFallOn(BlockGetter level, Entity entity) {
         if (entity.isSuppressingBounce()) {
             super.updateEntityMovementAfterFallOn(level, entity);
         } else {

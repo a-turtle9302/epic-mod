@@ -25,8 +25,8 @@ public class QuarterBlock extends StairBlock {
     private static final VoxelShape BASE_STRAIGHT = Block.box(0, 0, 0, 16, 8, 8);
     private static final VoxelShape BASE_OUTER = Block.box(0, 0, 0, 8, 8, 8);
     private static final VoxelShape BASE_INNER = Shapes.or(
-        Block.box(0, 0, 0, 16, 8, 8),  // long leg along Z
-        Block.box(8, 0, 0, 16, 8, 16)  // short leg along X
+            Block.box(0, 0, 0, 16, 8, 8),  // long leg along Z
+            Block.box(8, 0, 0, 16, 8, 16)  // short leg along X
     );
 
     private static final Map<Direction, VoxelShape> BOTTOM_STRAIGHT = Shapes.rotateHorizontal(BASE_STRAIGHT);
@@ -48,7 +48,7 @@ public class QuarterBlock extends StairBlock {
     }
 
     @Override
-    protected @NonNull VoxelShape getShape(BlockState state, @NonNull BlockGetter level, @NonNull BlockPos pos, @NonNull CollisionContext context) {
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         boolean bottom = state.getValue(HALF) == Half.BOTTOM;
         Direction facing = state.getValue(FACING);
 
@@ -68,14 +68,14 @@ public class QuarterBlock extends StairBlock {
     }
 
     @Override
-    public @NonNull BlockState getStateForPlacement(@NonNull BlockPlaceContext context) {
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
         BlockState state = super.getStateForPlacement(context);
         return state.setValue(SHAPE, getStairsShape(state, context.getLevel(), context.getClickedPos()));
     }
 
     @Override
-    protected @NonNull BlockState updateShape(@NonNull BlockState state, @NonNull LevelReader level, @NonNull ScheduledTickAccess ticks,
-                                              @NonNull BlockPos pos, @NonNull Direction dir, @NonNull BlockPos neighborPos, @NonNull BlockState neighborState, @NonNull RandomSource random) {
+    protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess ticks,
+                                     BlockPos pos, Direction dir, BlockPos neighborPos, BlockState neighborState, RandomSource random) {
         state = super.updateShape(state, level, ticks, pos, dir, neighborPos, neighborState, random);
         return state.setValue(SHAPE, getStairsShape(state, level, pos)); // recompute for bending
     }

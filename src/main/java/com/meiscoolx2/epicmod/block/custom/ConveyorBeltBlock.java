@@ -13,10 +13,10 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.Vec3;
 import org.jspecify.annotations.NonNull;
 
-public class ConveyorBeltBlock extends HorizontalDirectionalBlock{
+public class ConveyorBeltBlock extends HorizontalDirectionalBlock {
 
     public static final MapCodec<ConveyorBeltBlock> CODEC =
-        simpleCodec(ConveyorBeltBlock::new);
+            simpleCodec(ConveyorBeltBlock::new);
 
     public ConveyorBeltBlock(Properties properties) {
         super(properties);
@@ -35,7 +35,7 @@ public class ConveyorBeltBlock extends HorizontalDirectionalBlock{
     }
 
     @Override
-    protected @NonNull MapCodec<? extends HorizontalDirectionalBlock> codec() {
+    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
         return CODEC;
     }
 
@@ -46,8 +46,8 @@ public class ConveyorBeltBlock extends HorizontalDirectionalBlock{
             Direction dir = state.getValue(FACING);
 
             Vec3 push = new Vec3(dir.getStepX(), 0, dir.getStepZ())
-                .normalize()
-                .scale(0.1); // conveyor speed
+                    .normalize()
+                    .scale(0.1); // conveyor speed
 
             entity.setDeltaMovement(entity.getDeltaMovement().add(push));
         }
