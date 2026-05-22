@@ -58,6 +58,7 @@ public class ModItems {
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(itemGroup -> {
             itemGroup.accept(ModItems.CRISPY_FRIES);
+            itemGroup.accept(ModItems.NC_COLA);
         });
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS).register(itemGroup -> {
