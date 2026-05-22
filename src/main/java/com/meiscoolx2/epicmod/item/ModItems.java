@@ -31,10 +31,11 @@ public class ModItems {
     public static final Item TURTLE = registerItem("turtle", Item::new, new Item.Properties().sword(ModToolMaterials.TURTLE, 3, -2.4f));
     public static final Item CRISPY_FRIES = registerItem("crispy_fries", CrispyFriesItem::new, new Item.Properties().food(ModFoodProperties.CRISPY_FRIES));
     public static final Item GRIMMY_SPAWN_EGG = registerItem(
-		"grimmy_spawn_egg",
-				SpawnEggItem::new,
-		new Item.Properties().spawnEgg(ModEntityTypes.GRIMMY)
-);
+            "grimmy_spawn_egg",
+            SpawnEggItem::new,
+            new Item.Properties().spawnEgg(ModEntityTypes.GRIMMY)
+    );
+    public static final Item NC_COLA = registerItem("nc_cola", Item::new, new Item.Properties().food(ModFoodProperties.NC_COLA));
 
     public static <GenericItem extends Item> GenericItem registerItem(String name, Function<Item.Properties, GenericItem> itemFactory, Item.Properties settings) {
         ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(EpicMod.MOD_ID, name));

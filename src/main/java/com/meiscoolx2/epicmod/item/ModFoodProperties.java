@@ -18,6 +18,11 @@ public class ModFoodProperties {
             .saturationModifier(0.8f)
             .build();
 
+    public static final FoodProperties NC_COLA = new FoodProperties.Builder()
+            .nutrition(2)
+            .saturationModifier(0.1f)
+            .build();
+
     public static final Consumable SUSPICIOUS_SUBSTANCE_EFFECT = Consumables.defaultFood()
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.GLOWING, 2400), 0.75f)).build();
 }
